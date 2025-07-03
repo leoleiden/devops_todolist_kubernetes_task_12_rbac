@@ -17,7 +17,7 @@ spec:
       labels:
         app: todoapp
     spec:
-      serviceAccountName: secrets-reader
+      serviceAccountName: todo-sa
       containers:
       - name: todoapp
         image: ikulyk404/todoapp:4.0.1
