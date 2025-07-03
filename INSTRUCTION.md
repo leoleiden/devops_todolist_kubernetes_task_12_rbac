@@ -25,14 +25,14 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: todo-sa
-  namespace: app
+  namespace: todoapp
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: secret-reader
-  namespace: app
+  namespace: todoapp
 rules:
 - apiGroups: [""]
   resources: ["secrets"]
@@ -43,11 +43,11 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: secret-reader-binding
-  namespace: app
+  namespace: todoapp
 subjects:
 - kind: ServiceAccount
   name: todo-sa
-  namespace: app
+  namespace: todoapp
 roleRef:
   kind: Role
   name: secret-reader
